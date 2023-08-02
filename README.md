@@ -7,9 +7,9 @@
 精准测试sdk是基于java语言开发，提供两大核心能力。
 
 - 代码覆盖率统计
-- 代码修改影响调用链分析
+- 代码影响调用链分析
 
-并在此基础上封装成一个个原子能力，自由编排，旨在以更方便简单的方式为QA团队赋能，提高研发测试效率。
+并在此基础上封装成各原子能力，可进行自由编排，旨在以更便捷的方式为赋能。
 
 ### 二、SDK使用
 
@@ -19,12 +19,6 @@
 
 ```plaintext
 mvn clean install -Dmaven.test.skip=true
-```
-
-- 执行SDK发布:
-
-```plaintext
-mvn clean deploy -Dmaven.test.skip=true
 ```
 
 - 平台侧引入：
@@ -53,7 +47,7 @@ public static void main(String[] args) {
     List<ProjectParam> projectParams = Lists.newArrayList();
     ProjectParam projectParam = new ProjectParam();
     projectParam.setProjectRootPath("demo项目根目录");
-    projectParam.setExecType(ExecType.COMMIT_DIFF);
+    projectParam.setExecType(ExecType.BRANCH_DIFF);
     projectParam.setCurrentBranch("demo项目当前分支");
     projectParam.setCompareBranch("demo项目对比分支");
     projectParam.setGitParam(gitParam);
